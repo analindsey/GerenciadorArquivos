@@ -38,6 +38,7 @@ public class GerenciadorController {
 	// aqui iremos editar a mídia
 	
 	public boolean editarMidia(int index, String titulo, int duracao, String categoria,String idioma, String artista, String autores) {
+		
 		if(index>= 0 && index < midias.size()) {
 			Midia m = midias.get(index);
 			m.setTitulo(titulo);

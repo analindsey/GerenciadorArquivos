@@ -28,13 +28,42 @@ public class GerenciadorGUI extends JFrame{
 		JButton btnRemover = new JButton("Remover mídia selecionada");
 		JButton btnMover = new JButton("Mover mídia selecionada");
 		
+		add(painelSuperior, BorderLayout.NORTH);
+		
+		//estilizando os botões:
+		Dimension tamanhoBotao = new Dimension(180,35);
+		Font fonteBotao = new Font("Tahoma", Font.BOLD,12);
+		Color corFundo = new Color(220,220,220);
+		Color corTexto = Color.DARK_GRAY;
+		
+		btnIncluir.setPreferredSize(tamanhoBotao);
+		btnIncluir.setFont(fonteBotao);
+		btnIncluir.setBackground(corFundo);
+		btnIncluir.setFocusPainted(false);
+		btnIncluir.setBorder(BorderFactory.createRaisedBevelBorder());
+		
+		btnEditar.setPreferredSize(tamanhoBotao);
+		btnEditar.setFont(fonteBotao);
+		btnEditar.setBackground(corFundo);
+		btnEditar.setFocusPainted(false);
+		btnEditar.setBorder(BorderFactory.createRaisedBevelBorder());
+		
+		btnRemover.setPreferredSize(tamanhoBotao);
+		btnRemover.setFont(fonteBotao);
+		btnRemover.setBackground(corFundo);
+		btnRemover.setFocusPainted(false);
+		btnRemover.setBorder(BorderFactory.createRaisedBevelBorder());
+		
+		btnMover.setPreferredSize(tamanhoBotao);
+		btnMover.setFont(fonteBotao);
+		btnMover.setBackground(corFundo);
+		btnMover.setFocusPainted(false);
+		btnMover.setBorder(BorderFactory.createRaisedBevelBorder());
 		
 		painelSuperior.add(btnIncluir);
 		painelSuperior.add(btnEditar);
 		painelSuperior.add(btnRemover);
 		painelSuperior.add(btnMover);
-		
-		add(painelSuperior, BorderLayout.NORTH);
 		
 		//área de listagem:
 		areaListagem = new JTextArea();
