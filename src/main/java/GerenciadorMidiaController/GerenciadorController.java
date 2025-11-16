@@ -86,10 +86,11 @@ public class GerenciadorController {
 	}
 	 
  }
+ @SuppressWarnings("unchecked")
 	private void carregarMidias() {
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(arquivo))){
 			midias = (List<Midia>) ois.readObject();
-		}catch (IOException | classNotFoundException e) {
+		}catch (IOException | ClassNotFoundException e) {
 			//ou dá erro ou o arquivo não existe
 		}
 		

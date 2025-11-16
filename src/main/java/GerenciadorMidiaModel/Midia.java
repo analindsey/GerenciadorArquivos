@@ -1,6 +1,7 @@
 package GerenciadorMidiaModel;
+import java.io.Serializable;
 
-public abstract class Midia {
+public abstract class Midia implements Serializable {
 	protected String local;
 	protected double tamanho;
 	protected String titulo;
