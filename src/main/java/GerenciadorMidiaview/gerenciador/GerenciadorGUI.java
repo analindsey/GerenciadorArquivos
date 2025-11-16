@@ -16,20 +16,25 @@ public class GerenciadorGUI extends JFrame{
 	
 	public GerenciadorGUI() {
 		setTitle("Gerenciador de Mídia");
-		setSize(600,400);
+		setSize(800,800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 		
+		
 		//painel para ações:
 		JPanel painelSuperior = new JPanel();
-		JButton btnIncluir = new JButton("Incluir mídia");
-		JButton btnEditar = new JButton("Editar mídia selecionada");
+		JButton btnIncluir = new JButton("Incluir mídia selecionada");
+		JButton btnEditar = new JButton("editar mídia selecionada");
 		JButton btnRemover = new JButton("Remover mídia selecionada");
 		JButton btnMover = new JButton("Mover mídia selecionada");
+		
+		
 		painelSuperior.add(btnIncluir);
 		painelSuperior.add(btnEditar);
 		painelSuperior.add(btnRemover);
 		painelSuperior.add(btnMover);
+		
+		add(painelSuperior, BorderLayout.NORTH);
 		
 		//área de listagem:
 		areaListagem = new JTextArea();
@@ -44,13 +49,12 @@ public class GerenciadorGUI extends JFrame{
 	
 	private void incluirMidia() {
 		String tipo = JOptionPane.showInputDialog("Tipo (Filme/Musica/Livro):");
-		String local = JOptionPane.showInputDialog("Local:");
 		long tamanho = Long.parseLong(JOptionPane.showInputDialog("Tamanho:"));
 		String titulo = JOptionPane.showInputDialog("Título:");
 		int duracao = Integer.parseInt(JOptionPane.showInputDialog("Duração:"));
 		String categoria = JOptionPane.showInputDialog("Categoria:");
 		String atributo = JOptionPane.showInputDialog("Idioma/Artista/Autores:");
-		if(controller.incluirMidia(tipo, local, tamanho, titulo, duracao, categoria, atributo, atributo, atributo)) {
+		if(controller.incluirMidia(tipo, atributo, tamanho, titulo, duracao, categoria, atributo, atributo, atributo)) {
 			JOptionPane.showMessageDialog(this, "Incluida com sucesso!");
 		}else {
 			JOptionPane.showMessageDialog(this, "Erro ao incluir mídia");
@@ -78,7 +82,8 @@ public class GerenciadorGUI extends JFrame{
   public static void main( String[] args )
     {
         SwingUtilities.invokeLater(() -> {
-        	new GerenciadorGUI().setVisible(true);
+        	GerenciadorGUI gui = new GerenciadorGUI();
+        	gui.setVisible(true);
         });
     }
 }
