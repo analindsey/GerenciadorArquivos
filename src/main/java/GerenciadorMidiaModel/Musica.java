@@ -15,10 +15,8 @@ public class Musica extends Midia {
 	public void setArtista(String artista) {
 		this.artista = artista;
 	}
-	@Override
-	public String exibirAtributos() {
-		return "Música: " + getTitulo() + " | Artista: " + artista + " | Duração: " + getDuracao() + "seg | Categoria: " + getCategoria();
-	}
+	
+	
 	
 
 }

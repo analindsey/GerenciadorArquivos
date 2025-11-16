@@ -7,6 +7,14 @@ public abstract class Midia {
 	protected double duracao;
 	protected String categoria;
 	
+	public Midia(String local, long tamanho, String titulo, int duracao, String categoria) {
+		this.local = local;
+		this.tamanho = tamanho;
+		this.titulo = titulo;
+		this.duracao = duracao;
+		this.categoria = categoria;
+	}
+
 	public String getLocal() {
 		return local;
 	}
@@ -36,6 +44,11 @@ public abstract class Midia {
 	}
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+
+	public String exibirAtributos() {
+		
+		return null;
 	}
 
 }
